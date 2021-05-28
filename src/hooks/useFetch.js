@@ -2,16 +2,14 @@ import { useEffect } from "react";
 import * as actions from "../libs/actions";
 import { UseAppContext } from "../appContext";
 import dateFormat from "dateformat";
+import backendurl from "../../libs/backendurl";
 
 function useFetch() {
   const { dispatch, refreshSwitch, state } = UseAppContext();
 
-  const BACK_END = "http://localhost:5000";
-  const GET_PUPILS = "Homework";
-
   useEffect(() => {
     async function fetchData() {
-      let response = await fetch(`${BACK_END}/${GET_PUPILS}`);
+      let response = await fetch(backendurl);
       let data = await response.json();
       console.log(data);
 

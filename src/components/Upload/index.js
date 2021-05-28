@@ -3,14 +3,13 @@ import { uploadFile as uploadToS3 } from "react-s3";
 import css from "../Upload/Upload.module.css";
 import { UseAppContext } from "../../appContext";
 import { config } from "../../libs/configS3";
+import backendurl from "../../libs/backendurl";
 
 const Upload = ({ hideModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
   const [dateDue, setDateDue] = useState("");
-
-  const BACKEND_URL = "http://localhost:5000";
 
   const { refreshSwitch, setRefreshSwitch } = UseAppContext();
 
@@ -49,12 +48,12 @@ const Upload = ({ hideModal }) => {
       comment: comment,
     };
     // Make the POST request (INSERT)
-    postHomework("/homework", "POST", homework);
+    postHomework("POST", homework);
   }
 
-  async function postHomework(path, method, body) {
+  async function postHomework(method, body) {
     // const res =
-    await fetch(`${BACKEND_URL}${path}`, {
+    await fetch(backendurl, {
       method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),

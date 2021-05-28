@@ -4,6 +4,7 @@ import { UseAppContext } from "../../appContext";
 import { useHistory } from "react-router-dom";
 import CanvasTools from "./CanvasTools";
 import BackButton from "../BackButton";
+import backendurl from "../../libs/backendurl";
 
 function HomeworkViewer() {
   const [comment, setComment] = useState("");
@@ -26,7 +27,6 @@ function HomeworkViewer() {
     }
   }, [state.childIndex]);
 
-  const BACKEND_URL = "http://localhost:5000";
 
   async function rejectWork() {
     // Create our object to PUT (Update) into childrenshomework on SQL
@@ -36,7 +36,7 @@ function HomeworkViewer() {
       comment: comment,
       annotation: null,
     };
-    putHomework(`/homework/${homework.id}`, "PUT", childrenshomework);
+    putHomework(`${homework.id}`, "PUT", childrenshomework);
   }
 
   async function markWork() {
@@ -47,11 +47,11 @@ function HomeworkViewer() {
       annotation: saveableCanvas.current.getSaveData(),
     };
     // Make the PUT request (UPDATE)
-    putHomework(`/homework/${homework.id}`, "PUT", childrenshomework);
+    putHomework(`${homework.id}`, "PUT", childrenshomework);
   }
 
   async function putHomework(path, method, body) {
-    await fetch(`${BACKEND_URL}${path}`, {
+    await fetch(`${backendurl}${path}`, {
       method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
