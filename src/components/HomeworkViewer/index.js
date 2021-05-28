@@ -4,7 +4,7 @@ import { UseAppContext } from "../../appContext";
 import { useHistory } from "react-router-dom";
 import CanvasTools from "./CanvasTools";
 import BackButton from "../BackButton";
-import backendurl from "../../libs/backendurl";
+import { backendurl } from "../../libs/backendurl";
 
 function HomeworkViewer() {
   const [comment, setComment] = useState("");

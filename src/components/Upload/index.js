@@ -3,7 +3,7 @@ import { uploadFile as uploadToS3 } from "react-s3";
 import css from "../Upload/Upload.module.css";
 import { UseAppContext } from "../../appContext";
 import { config } from "../../libs/configS3";
-import backendurl from "../../libs/backendurl";
+import { backendurl } from "../../libs/backendurl";
 
 const Upload = ({ hideModal }) => {
   const [selectedFile, setSelectedFile] = useState();

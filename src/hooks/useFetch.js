@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import * as actions from "../libs/actions";
 import { UseAppContext } from "../appContext";
 import dateFormat from "dateformat";
-import backendurl from "../../libs/backendurl";
+import { backendurl } from "../libs/backendurl";
 
 function useFetch() {
   const { dispatch, refreshSwitch, state } = UseAppContext();

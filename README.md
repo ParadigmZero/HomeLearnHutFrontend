@@ -1,3 +1,11 @@
+# Original repository
+
+Sourced from:
+
+https://github.com/SchoolOfCode/project-front-end-thefullstackfive
+
+Ammendments have been made.
+
 # Packages used
 
 ```
@@ -34,7 +42,9 @@ Example:
 
 # child object ( children / classroom )
 
-  ```javascript
+Example:
+
+```javascript
   {
     name: "Amelia",
     avatar: `${host}1.png`,
@@ -43,10 +53,27 @@ Example:
     comment: null
 }
 ```
+# Backend
 
-# Environmental variables
+Connecting to a remote Heroku deployment of the backend. Note, this slows down data retrieval somewhat.
+
+The URL is below:
+
+https://homelearn-hut.herokuapp.com/homework/
+
+The code for the backend is found at:
+
+https://github.com/ParadigmZero/HomeLearnHutBackend
+
+or
+
+https://github.com/SchoolOfCode/project-back-end-thefullstackfive
+
+# Environmental variables for AWS S3 upload
 
 You will need to input the following environmental variables into a .env file ( root directory).
+
+These relate to an Amazon AWS S3 bucket. For security reasons these cannot be given.
 
 (Place them after the = sign )
 
