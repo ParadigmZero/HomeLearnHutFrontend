@@ -17,7 +17,7 @@ function Header() {
         </div>
         <div>
           <button className={css.logoBtn} onClick={navigateHome}>
-            <h1 className={css.title}>HomeLearn Hut</h1>
+            <h1 className={css.title}>HomeWorked</h1>
           </button>
         </div>
       </div>

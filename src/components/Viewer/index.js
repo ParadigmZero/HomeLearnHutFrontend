@@ -6,14 +6,14 @@ import CanvasTools from "./CanvasTools";
 import BackButton from "../BackButton";
 import { backendurl } from "../../libs/backendurl";
 
-function HomeworkViewer() {
+function Viewer() {
   const [comment, setComment] = useState("");
 
   const { state, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
-  const navigateBack = () => history.push("/myClassroom");
+  const navigateBack = () => history.push("/classroom");
 
   let homework = state.homework[state.homeworkIndex];
   let childHomework =
@@ -112,4 +112,4 @@ function HomeworkViewer() {
   );
 }
 
-export default HomeworkViewer;
+export default Viewer;

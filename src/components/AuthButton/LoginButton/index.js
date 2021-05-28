@@ -14,14 +14,6 @@ const LoginButton = () => {
       >
         Log In
       </button>
-      <p className={css.text1}>No account yet? Click the Sign up button!</p>
-      <button
-        data-testid="signupbuttontest"
-        className={css.button2}
-        onClick={() => loginWithRedirect()}
-      >
-        Sign Up
-      </button>
     </div>
   );
 };

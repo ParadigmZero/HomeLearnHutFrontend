@@ -1,17 +1,17 @@
 import * as actions from "../../libs/actions";
 import React from "react";
 import Student from "./Student";
-import css from "../MyClassroom/MyClassroom.module.css";
+import css from "../Classroom/Classroom.module.css";
 import { useHistory } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
 import BackButton from "../BackButton";
 
-function MyClassroom() {
+function Classroom() {
   const history = useHistory();
 
   function goToHomework(index) {
     dispatch({ type: actions.CHILD_CHANGE, payload: index });
-    history.push(`/homeworkViewer`);
+    history.push(`/viewer`);
   }
 
   const navigateBack = () => history.push("/");
@@ -50,4 +50,4 @@ function MyClassroom() {
   );
 }
 
-export default MyClassroom;
+export default Classroom;

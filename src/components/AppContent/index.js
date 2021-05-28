@@ -1,11 +1,8 @@
-import HomeworkViewer from "../HomeworkViewer";
-import MyClassroom from "../MyClassroom";
-import HomeWorkFeed from "../HomeWorkFeed";
+import Viewer from "../Viewer";
+import Classroom from "../Classroom";
+import Feed from "../Feed";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "../Header";
-import DropDown from "../DropDown";
-import Footer from "../Footer";
-import ScrollToTop from "../../libs/scrollTop";
 import useFetch from "../../hooks/useFetch";
 
 function AppContent() {
@@ -13,26 +10,62 @@ function AppContent() {
 
   return (
     <>
+
+
+
+      <Header />
+
       <Router>
-        <ScrollToTop>
-          <Header />
-          <DropDown />
-          <Switch>
-            <Route path="/homeworkViewer">
-              <HomeworkViewer />
-            </Route>
-            <Route path="/myClassroom">
-              <MyClassroom />
-            </Route>
-            <Route path="/">
-              <HomeWorkFeed />
-            </Route>
-          </Switch>
-        </ScrollToTop>
+        <Switch>
+          <Route path="/viewer">
+            <Viewer />
+          </Route>
+          <Route path="/classroom">
+            <Classroom />
+          </Route>
+          <Route path="/">
+            <Feed />
+          </Route>
+        </Switch>
       </Router>
-      <Footer />
+
     </>
   );
 }
 
 export default AppContent;
+
+
+
+{/* <table>
+<tbody>
+  <tr>
+    <td><Header /></td>
+  </tr>
+  <tr>
+    <td>
+
+
+
+
+
+    <Router>
+    <Switch>
+<Route path="/viewer">
+  <Viewer />
+</Route>
+<Route path="/classroom">
+  <Classroom />
+</Route>
+<Route path="/">
+  <Feed />
+</Route>
+</Switch>
+</Router>
+
+
+
+    </td>
+  </tr>
+</tbody>
+</table> */}
