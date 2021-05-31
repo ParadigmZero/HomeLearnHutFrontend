@@ -2,7 +2,7 @@ import Viewer from "../Viewer";
 import Classroom from "../Classroom";
 import Feed from "../Feed";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "../Header";
+import TopBar from "../TopBar";
 import useFetch from "../../hooks/useFetch";
 
 function AppContent() {
@@ -13,9 +13,10 @@ function AppContent() {
 
 
 
-      <Header />
+
 
       <Router>
+        <TopBar />
         <Switch>
           <Route path="/viewer">
             <Viewer />

@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import css from "./HomeworkViewer.module.css";
 import { UseAppContext } from "../../appContext";
-import { useHistory } from "react-router-dom";
 import CanvasTools from "./CanvasTools";
-import BackButton from "../BackButton";
 import { backendurl } from "../../libs/backendurl";
+import { useHistory } from "react-router-dom";
+
 
 function Viewer() {
   const [comment, setComment] = useState("");
@@ -13,7 +13,9 @@ function Viewer() {
 
   const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
-  const navigateBack = () => history.push("/classroom");
+  const navigateBack = () => history.push("/myClassroom");
+
+
 
   let homework = state.homework[state.homeworkIndex];
   let childHomework =
@@ -29,7 +31,7 @@ function Viewer() {
 
 
   async function rejectWork() {
-    // Create our object to PUT (Update) into childrenshomework on SQL
+
     const childrenshomework = {
       id: childHomework.id,
       image: null,
@@ -70,7 +72,6 @@ function Viewer() {
     navigateBack();
   };
 
-  // Use a PNG for images!
   return (
     <div className={css.allOfViewer}>
       <div className={css.avatarContain}>
@@ -88,7 +89,6 @@ function Viewer() {
           saveableCanvas={saveableCanvas}
         />
         <div>
-          <BackButton navigateBack={navigateBack} />
           <div className={css.contain}>
             Set: {homework.dateset}
             <br />

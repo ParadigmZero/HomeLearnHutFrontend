@@ -3,9 +3,11 @@ import css from "./Header.module.css";
 import logo from "../../assets/LogoApp.gif";
 import { useHistory } from "react-router-dom";
 
-function Header() {
+function TopBar() {
   const history = useHistory();
   const navigateHome = () => history.push("/");
+
+
 
   return (
     <div className={css.header}>
@@ -16,7 +18,7 @@ function Header() {
           </button>
         </div>
         <div>
-          <button className={css.logoBtn} onClick={navigateHome}>
+          <button className={css.logoBtn} onClick={() => history.push("/")}>
             <h1 className={css.title}>HomeWorked</h1>
           </button>
         </div>
@@ -28,4 +30,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default TopBar;
