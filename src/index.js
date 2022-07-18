@@ -7,12 +7,11 @@ import { AppProvider } from "./appContext";
 
 ReactDOM.render(
 
-    <AppProvider>
-      <ModalProvider>
-        <App />
-      </ModalProvider>
-    </AppProvider>
-
+  <AppProvider>
+    <ModalProvider>
+      <App />
+    </ModalProvider>
+  </AppProvider>,
   document.getElementById("root")
 );
 reportWebVitals();

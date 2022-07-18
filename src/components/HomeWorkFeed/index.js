@@ -6,7 +6,6 @@ import { IoIosArrowDropup } from "react-icons/io";
 import { useHistory } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
 import ResetButton from "./ResetButton";
-import Greeting from "./Greeting";
 import * as actions from "../../libs/actions";
 import { useScrollPosition } from "../../hooks/useScroll";
 
@@ -40,7 +39,6 @@ const HomeWorkFeed = () => {
 
   return (
     <div>
-      <Greeting />
       <DropdownTerm handleClick={changeFilter} />
       <ResetButton setFilter1={setFilter1} setFilter2={setFilter2} />
       <ul className={css.post}>
@@ -48,7 +46,7 @@ const HomeWorkFeed = () => {
           .map((homework, index) => [
             <li key={index}>
               {homework.dateset.includes(filter1) ||
-              homework.dateset.includes(filter2) ? (
+                homework.dateset.includes(filter2) ? (
                 <Post
                   homework={homework}
                   index={index}
