@@ -6,6 +6,14 @@ https://github.com/SchoolOfCode/project-front-end-thefullstackfive
 
 Ammendments have been made.
 
+# Run the project
+
+Firstly, make sure to do a correct npm install, to install all the packages .etc
+
+Then run the project as follows:
+
+`npm start`
+
 # Packages used
 
 ```

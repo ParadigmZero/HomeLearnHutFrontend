@@ -15,6 +15,7 @@ const Upload = ({ hideModal }) => {
 
   const browseClick = (event) => {
     setSelectedFile(event.target.files[0]);
+    console.log(event.target.value);
   };
 
   // S3 Upload

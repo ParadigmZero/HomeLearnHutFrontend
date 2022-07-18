@@ -1,4 +1,3 @@
-import AuthButton from "../AuthButton";
 import css from "./Header.module.css";
 import logo from "../../assets/LogoApp.gif";
 import { useHistory } from "react-router-dom";
@@ -22,7 +21,6 @@ function Header() {
         </div>
       </div>
       <div>
-        <AuthButton />
       </div>
     </div>
   );
